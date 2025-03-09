@@ -48,7 +48,7 @@ const checkWinner = () => {
 
         if (boxA !== "" && boxA === boxB && boxB === boxC) { // Ensuring non-empty and match
             let winner = boxA === "x" ? "Player1" : "Player2"; // Always show "Player1" or "Player2"
-            message.innerText = `${winner}, congratulations you won!`;
+            message.innerText = `${winner} congratulations you won!`;
             gameOver = true;
             disableBoard();
             return;

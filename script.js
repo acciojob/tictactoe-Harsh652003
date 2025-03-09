@@ -7,9 +7,7 @@ let submitButton = document.querySelector("#submit");
 let player1Input = document.querySelector("#player1");
 let player2Input = document.querySelector("#player2");
 
-let player1 = "Player1";
-let player2 = "Player2";
-let turnX = true; // Player 1 (X) starts
+let turnX = true; // Player1 (X) starts
 let gameOver = false;
 
 // Start Game on Submit
@@ -18,14 +16,14 @@ submitButton.addEventListener("click", () => {
     gameContainer.classList.remove("hide"); // Show game board
 
     gameOver = false; // Reset game state
-    message.innerText = `${player1}, you're up!`;
+    message.innerText = `Player1, you're up!`;
 });
 
 // Restart Game
 restart.addEventListener("click", () => {
     turnX = true;
     gameOver = false;
-    message.innerText = `${player1}, you're up!`;
+    message.innerText = `Player1, you're up!`;
 
     boxes.forEach((box) => {
         box.innerText = "";
@@ -44,8 +42,12 @@ const winPatterns = [
 const checkWinner = () => {
     for (let pattern of winPatterns) {
         let [a, b, c] = pattern;
-        if (boxes[a].innerText && boxes[a].innerText === boxes[b].innerText && boxes[b].innerText === boxes[c].innerText) {
-            let winner = boxes[a].innerText === "x" ? Player1 : Player2; // Correct winner assignment
+        let boxA = boxes[a].innerText;
+        let boxB = boxes[b].innerText;
+        let boxC = boxes[c].innerText;
+
+        if (boxA !== "" && boxA === boxB && boxB === boxC) { // Ensuring non-empty and match
+            let winner = boxA === "x" ? "Player1" : "Player2"; // Always show "Player1" or "Player2"
             message.innerText = `${winner}, congratulations you won!`;
             gameOver = true;
             disableBoard();
@@ -71,11 +73,12 @@ boxes.forEach((box) => {
         if (!gameOver && box.innerText === "") {
             box.innerText = turnX ? "x" : "o"; // Use uppercase X and O
             box.disabled = true;
-            checkWinner(); // Check Winner
+
+            checkWinner(); // Check Winner AFTER updating the board
 
             if (!gameOver) {
                 turnX = !turnX; // Switch turn after checking winner
-                message.innerText = turnX ? `${player1}, you're up!` : `${player2}, you're up!`;
+                message.innerText = turnX ? `Player1, you're up!` : `Player2, you're up!`;
             }
         }
     });

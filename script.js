@@ -45,7 +45,7 @@ const checkWinner = () => {
     for (let pattern of winPatterns) {
         let [a, b, c] = pattern;
         if (boxes[a].innerText && boxes[a].innerText === boxes[b].innerText && boxes[b].innerText === boxes[c].innerText) {
-            let winner = boxes[a].innerText === "X" ? player1 : player2; // Correct winner assignment
+            let winner = boxes[a].innerText === "x" ? Player1 : Player2; // Correct winner assignment
             message.innerText = `${winner}, congratulations you won!`;
             gameOver = true;
             disableBoard();
@@ -69,7 +69,7 @@ const disableBoard = () => {
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
         if (!gameOver && box.innerText === "") {
-            box.innerText = turnX ? "X" : "O"; // Use uppercase X and O
+            box.innerText = turnX ? "x" : "o"; // Use uppercase X and O
             box.disabled = true;
             checkWinner(); // Check Winner
 

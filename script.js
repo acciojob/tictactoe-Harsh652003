@@ -7,8 +7,8 @@ let playerForm = document.querySelector("#player-form");
 let gameContainer = document.querySelector("#game-container"); // Correct
  // Ensure this exists
 let submitButton = document.querySelector("#submit");
-let player1Input = document.querySelector("#player-1");
-let player2Input = document.querySelector("#player-2");
+let player1Input = document.querySelector("#player1");
+let player2Input = document.querySelector("#player2");
 
 let player1 = "";
 let player2 = "";

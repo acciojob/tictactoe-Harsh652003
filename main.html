@@ -3,13 +3,49 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+    <div id="player-form">
+        <h2>Enter Player Names</h2>
+        <input type="text" id="player-1" placeholder="Player 1 Name">
+        <input type="text" id="player-2" placeholder="Player 2 Name">
+        <button id="submit">Start Game</button>
+    </div>
+
+    <div class="messg hide">
+        <p id="message">Winner</p>
+    </div>
+
+    <!-- Hide game board initially -->
+    <div id="game-container" class="hide">
+        <main>
+            <h1 class="heading">Tic Tac Toe</h1>
+            
+            <!-- Improved Turn Message -->
+            <p id="turn-message">Waiting for players...</p>
+
+            <div class="container">
+                <div class="game">
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                </div>
+            </div>
+
+            <button id="restart">Restart Game</button>
+        </main>
+    </div>
+
+    <script type="text/javascript" src="./script.js"></script>
 
 </body>
 

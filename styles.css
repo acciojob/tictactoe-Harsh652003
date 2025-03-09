@@ -1,1 +1,126 @@
-/*  your css code here. If applicable */
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(5, 251, 222);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Hide game container initially */
+#game-container.hide {
+    display: none;
+}
+
+/* Player input form styling */
+#player-form {
+    margin: 2rem auto;
+    padding: 1rem;
+    background: white;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#player-form input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border: 2px solid #333;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#submit {
+    width: 50%;
+    padding: 10px;
+    font-size: 1rem;
+    background: rgb(135, 12, 235);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+
+#submit:hover {
+    background: rgb(112, 8, 200);
+    transform: scale(1.05);
+}
+
+/* Tic Tac Toe Board */
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+/* Heading */
+.heading {
+    height: 4rem;
+}
+
+/* Turn message */
+#turn-message {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Tic Tac Toe Boxes */
+.box {
+    width: 18vmin;
+    height: 18vmin;
+    font-size: 40px;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 5rem rgb(69, 66, 66);
+    color: brown;
+    background-color: azure;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.box:hover {
+    opacity: 70%;
+    transform: scale(1.05);
+}
+
+/* Restart Button */
+/* Restart Button */
+#restart {
+    width: 50%;
+    padding: 12px;
+    font-size: 1.2rem;
+    background: rgb(255, 69, 69);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+
+#restart:hover {
+    background: rgb(220, 0, 0);
+    transform: scale(1.05);
+}
+
+    

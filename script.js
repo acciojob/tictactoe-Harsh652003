@@ -49,7 +49,7 @@ const checkWinner = () => {
         let [a, b, c] = pattern;
         if (boxes[a].innerText && boxes[a].innerText === boxes[b].innerText && boxes[b].innerText === boxes[c].innerText) {
             let winnerName = boxes[a].innerText === "x" ? player1 : player2;
-            message.innerText = `${winnerName}, congratulations you won!`;
+            message.innerText = `${winnerName},congratulations you won!`;
             gameOver = true;
             disableBoard();
             return;

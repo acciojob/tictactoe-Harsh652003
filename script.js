@@ -48,8 +48,8 @@ const checkWinner = () => {
     for (let pattern of winPatterns) {
         let [a, b, c] = pattern;
         if (boxes[a].innerText && boxes[a].innerText === boxes[b].innerText && boxes[b].innerText === boxes[c].innerText) {
-            let winnerName = boxes[a].innerText === "x" ? player1 : player2;
-            message.innerText = `${winnerName},congratulations you won!`;
+            let winner = boxes[a].innerText === "X" ? "Player1" : "Player2"; // Always show Player1 or Player2
+            message.innerText = `${winner} congratulations you won! 🎉`;
             gameOver = true;
             disableBoard();
             return;
@@ -62,6 +62,7 @@ const checkWinner = () => {
         gameOver = true;
     }
 };
+
 
 // Disable Board After Game Ends
 const disableBoard = () => {
